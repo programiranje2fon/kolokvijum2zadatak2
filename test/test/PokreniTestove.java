@@ -12,6 +12,7 @@ import org.junit.runner.notification.Failure;
 
 import autobuska_stanica.AutobuskaStanicaTest;
 import autobuska_stanica.PolazakTest;
+import autobuska_stanica.gui.AutobuskaStanicaGUITest;
 import autobuska_stanica.rezervacije.RezervacijaKarataTest;
 
 /**
@@ -24,6 +25,7 @@ public class PokreniTestove {
 		runTestsForClass(PolazakTest.class);
 		runTestsForClass(AutobuskaStanicaTest.class);
 		runTestsForClass(RezervacijaKarataTest.class);
+		runTestsForClass(AutobuskaStanicaGUITest.class);
 	}
 
 	/**

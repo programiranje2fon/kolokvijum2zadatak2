@@ -41,7 +41,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 	private JTextField jtfBrojKarata;
 	private JLabel lblUnos;
 	private JButton btnRezervisi;
-	
+
 	private AutobuskaStanica stanica = new AutobuskaStanica();
 
 	/**
@@ -92,6 +92,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		contentPane.add(getLblUnos());
 		contentPane.add(getBtnRezervisi());
 	}
+
 	private JLabel getLblDestinacija() {
 		if (lblDestinacija == null) {
 			lblDestinacija = new JLabel("Destinacija:");
@@ -99,6 +100,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblDestinacija;
 	}
+
 	private JLabel getLblPolazak() {
 		if (lblPolazak == null) {
 			lblPolazak = new JLabel("Polazak (d/m/g):");
@@ -106,6 +108,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblPolazak;
 	}
+
 	private JLabel getLblBrojSlobodnihMesta() {
 		if (lblBrojSlobodnihMesta == null) {
 			lblBrojSlobodnihMesta = new JLabel("Broj slobodnih mesta:");
@@ -113,6 +116,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblBrojSlobodnihMesta;
 	}
+
 	private JTextField getJtfDestinacija() {
 		if (jtfDestinacija == null) {
 			jtfDestinacija = new JTextField();
@@ -121,6 +125,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfDestinacija;
 	}
+
 	private JTextField getJtfDan() {
 		if (jtfDan == null) {
 			jtfDan = new JTextField();
@@ -129,6 +134,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfDan;
 	}
+
 	private JTextField getJtfMesec() {
 		if (jtfMesec == null) {
 			jtfMesec = new JTextField();
@@ -137,6 +143,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfMesec;
 	}
+
 	private JTextField getJtfGodina() {
 		if (jtfGodina == null) {
 			jtfGodina = new JTextField();
@@ -145,6 +152,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfGodina;
 	}
+
 	private JTextField getJtfSlobodnaMesta() {
 		if (jtfSlobodnaMesta == null) {
 			jtfSlobodnaMesta = new JTextField();
@@ -153,6 +161,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfSlobodnaMesta;
 	}
+
 	private JLabel getLabel() {
 		if (label == null) {
 			label = new JLabel("/");
@@ -160,6 +169,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return label;
 	}
+
 	private JLabel getLabel_1() {
 		if (label_1 == null) {
 			label_1 = new JLabel("/");
@@ -167,6 +177,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return label_1;
 	}
+
 	private JButton getBtnDodaj() {
 		if (btnDodaj == null) {
 			btnDodaj = new JButton("Dodaj");
@@ -178,16 +189,17 @@ public class AutobuskaStanicaGUI extends JFrame {
 						int mesec = Integer.parseInt(jtfMesec.getText());
 						int godina = Integer.parseInt(jtfGodina.getText());
 						int brojSlobodnihMesta = Integer.parseInt(jtfSlobodnaMesta.getText());
-						
-						GregorianCalendar datum = new GregorianCalendar(godina, mesec-1, dan);
-						
+
+						GregorianCalendar datum = new GregorianCalendar(godina, mesec - 1, dan);
+
 						Polazak polazak = new Polazak();
 						polazak.setDestinacija(destinacija);
 						polazak.setVreme(datum);
 						polazak.setBrojSlobodnihMesta(brojSlobodnihMesta);
-					
+
 						stanica.unesiPolazak(polazak);
-						JOptionPane.showMessageDialog(null, "Polazak je uspesno dodat", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Polazak je uspesno dodat", "Uspesno",
+								JOptionPane.INFORMATION_MESSAGE);
 					} catch (Exception e1) {
 						JOptionPane.showMessageDialog(null, e1.getMessage(), "Greska", JOptionPane.ERROR_MESSAGE);
 					}
@@ -197,6 +209,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return btnDodaj;
 	}
+
 	private JButton getBtnObrisi() {
 		if (btnObrisi == null) {
 			btnObrisi = new JButton("Obrisi");
@@ -213,6 +226,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return btnObrisi;
 	}
+
 	private JLabel getLblRezervacija() {
 		if (lblRezervacija == null) {
 			lblRezervacija = new JLabel("REZERVACIJA");
@@ -221,6 +235,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblRezervacija;
 	}
+
 	private JLabel getLblDestinacija_1() {
 		if (lblDestinacija_1 == null) {
 			lblDestinacija_1 = new JLabel("Destinacija:");
@@ -228,6 +243,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblDestinacija_1;
 	}
+
 	private JTextField getJtfDestinacija2() {
 		if (jtfDestinacija2 == null) {
 			jtfDestinacija2 = new JTextField();
@@ -236,6 +252,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfDestinacija2;
 	}
+
 	private JLabel getLblBrojKarata() {
 		if (lblBrojKarata == null) {
 			lblBrojKarata = new JLabel("Broj karata:");
@@ -243,6 +260,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblBrojKarata;
 	}
+
 	private JTextField getJtfBrojKarata() {
 		if (jtfBrojKarata == null) {
 			jtfBrojKarata = new JTextField();
@@ -251,6 +269,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return jtfBrojKarata;
 	}
+
 	private JLabel getLblUnos() {
 		if (lblUnos == null) {
 			lblUnos = new JLabel("UNOS");
@@ -259,6 +278,7 @@ public class AutobuskaStanicaGUI extends JFrame {
 		}
 		return lblUnos;
 	}
+
 	private JButton getBtnRezervisi() {
 		if (btnRezervisi == null) {
 			btnRezervisi = new JButton("Rezervisi");
@@ -266,13 +286,15 @@ public class AutobuskaStanicaGUI extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					String destinacija = jtfDestinacija2.getText();
 					int brojKarata = Integer.parseInt(jtfBrojKarata.getText());
-					
+
 					boolean uspesno = stanica.rezervisiKarte(destinacija, brojKarata);
-					
+
 					if (uspesno) {
-						JOptionPane.showMessageDialog(null, "Rezervacija uspesno obavljena", "Uspesno", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Rezervacija uspesno obavljena", "Uspesno",
+								JOptionPane.INFORMATION_MESSAGE);
 					} else {
-						JOptionPane.showMessageDialog(null, "Rezervacija nije uspela", "Greska", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Rezervacija nije uspela", "Greska",
+								JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			});

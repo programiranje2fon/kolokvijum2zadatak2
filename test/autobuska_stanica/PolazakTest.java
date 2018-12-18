@@ -1,6 +1,8 @@
 package autobuska_stanica;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.Modifier;
@@ -132,8 +134,14 @@ public class PolazakTest {
 	}
 	
 	@Test
-	public void metoda_equals() {
+	public void metoda_equals_nijeDobraKlasa() {
+		assertFalse("Metoda equals() ne vraca false ako se prosledi objekat druge klase.", instance.equals(new Object()));
+	}
+	
+	@Test
+	public void metoda_equals_isti() {
 		GregorianCalendar vreme = new GregorianCalendar();
+		vreme.set(GregorianCalendar.DAY_OF_MONTH, vreme.get(GregorianCalendar.DAY_OF_MONTH) + 1);
 
 		instance.setDestinacija("Pirot");
 		instance.setVreme(vreme);
@@ -145,6 +153,44 @@ public class PolazakTest {
 		p1.setBrojSlobodnihMesta(10);
 		
 		assertEquals("Metoda equals() ne vraca vrednost true za prosledjeni polazak sa istom destinacijom i vremenom.", p1, instance);
+	}
+	
+	@Test
+	public void metoda_equals_razlicitaDestinacija() {
+		GregorianCalendar vreme = new GregorianCalendar();
+		vreme.set(GregorianCalendar.DAY_OF_MONTH, vreme.get(GregorianCalendar.DAY_OF_MONTH) + 1);
+
+		instance.setDestinacija("Pirot");
+		instance.setVreme(vreme);
+		instance.setBrojSlobodnihMesta(10);
+		
+		Polazak p1 = new Polazak();
+		p1.setDestinacija("Krusevac");
+		p1.setVreme(vreme);
+		p1.setBrojSlobodnihMesta(10);
+		
+		assertNotEquals("Metoda equals() ne vraca vrednost false za prosledjeni polazak sa razlicitom destinacijom.", p1, instance);
+	}
+	
+	
+	@Test
+	public void metoda_equals_razlicitoVreme() {
+		GregorianCalendar vreme1 = new GregorianCalendar();
+		vreme1.set(GregorianCalendar.DAY_OF_MONTH, vreme1.get(GregorianCalendar.DAY_OF_MONTH) + 1);
+
+		instance.setDestinacija("Pirot");
+		instance.setVreme(vreme1);
+		instance.setBrojSlobodnihMesta(10);
+		
+		GregorianCalendar vreme2 = new GregorianCalendar();
+		vreme2.set(GregorianCalendar.DAY_OF_MONTH, vreme2.get(GregorianCalendar.DAY_OF_MONTH) + 2);
+		
+		Polazak p1 = new Polazak();
+		p1.setDestinacija("Pirot");
+		p1.setVreme(vreme2);
+		p1.setBrojSlobodnihMesta(10);
+		
+		assertNotEquals("Metoda equals() ne vraca vrednost false za prosledjeni polazak sa razlicitim vremenom.", p1, instance);
 	}
 	
 }
