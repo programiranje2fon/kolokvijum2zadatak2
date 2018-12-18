@@ -5,7 +5,7 @@ Napraviti javnu klasu **Polazak** u paketu **autobuska_stanica** koja ima:
 - Privatne atribute **sat** i **minut** koji predstavljaju sat i minut u danu polaska.
 - Privatni atribut **brojSlobodnihMesta** koji predstavlja broj slobodnih mesta za taj polazak.
 - Odgovarajuće **javne get i set metode** za ove atribute. Atribut destinacija ne sme biti null, niti prazan String. Atribut sat može biti samo u granicama od 0 do 24, a atribut minut u granicama od 0 do 60. U slučaju unosa ovih nedozvoljenih vrednosti, baciti neproveravani izuzetak sa odgovarajućom porukom.
-- Redefinisanu **equals** metodu klase Object. Metoda prvo proverava da li je uneti objekat klase **Polazak**, pa ako nije, vraća FALSE. Metoda vraća TRUE ako su destinacija i vreme jednaki destinaciji i vremenu unetog festivala, a inače FALSE.
+- Redefinisanu **equals** metodu klase Object. Metoda prvo proverava da li je uneti objekat klase **Polazak**, pa ako nije, vraća FALSE. Metoda vraća TRUE ako su destinacija i vreme jednaki destinaciji i vremenu unetog polaska, a inače FALSE.
 
 Napraviti javni interfejs **RezervacijaKarata** u paketu **autobuska_stanica.rezervacije** koji ima:
 - Metodu **unesiPolazak** koja ne vraća ništa, prima kao parametar objekat klase **Polazak** i baca proveravani izuzetak.
