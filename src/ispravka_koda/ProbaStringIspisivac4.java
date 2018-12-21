@@ -3,7 +3,7 @@ package ispravka_koda;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TestStringIspisivac4 {
+public class ProbaStringIspisivac4 {
 
 	public static void main(String[] args) {
 		List<String> lista = new LinkedList<>();
