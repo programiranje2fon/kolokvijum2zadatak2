@@ -14,6 +14,7 @@ import autobuska_stanica.AutobuskaStanicaTest;
 import autobuska_stanica.PolazakTest;
 import autobuska_stanica.gui.AutobuskaStanicaGUITest;
 import autobuska_stanica.rezervacije.RezervacijaKarataTest;
+import ispravka_koda.StringIspisivac4Test;
 
 /**
  * This class executes all tests and prints out the report.
@@ -26,6 +27,7 @@ public class PokreniTestove {
 		runTestsForClass(AutobuskaStanicaTest.class);
 		runTestsForClass(RezervacijaKarataTest.class);
 		runTestsForClass(AutobuskaStanicaGUITest.class);
+		runTestsForClass(StringIspisivac4Test.class);
 	}
 
 	/**
