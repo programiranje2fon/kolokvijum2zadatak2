@@ -48,6 +48,6 @@ public class StringIspisivac4Test {
 		
 		StringIspisivac4.ispisiParalelogram(lista);
 		
-		assertEquals("NE ispisuju se reci koji su palindromi", ocekivaniIspis, outContent.toString());
+		assertEquals("NE ispisuju se reci u obliku paralelograma.", ocekivaniIspis, outContent.toString());
 	}
 }
