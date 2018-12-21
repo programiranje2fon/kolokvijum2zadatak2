@@ -1,5 +1,7 @@
 # Zadatak 1
 
+** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+
 Napraviti javnu klasu **Polazak** u paketu **autobuska_stanica** koja ima:
 - Privatni atribut **destinacija** (npr. “Novi Sad”).
 - Privatne atribute **sat** i **minut** koji predstavljaju sat i minut u danu polaska.
@@ -23,3 +25,35 @@ Napraviti vizuelnu klasu **AutobuskaStanicaGUI** u paketu **autobuska_stanica.gu
 - Kada se pritisne dugme "Rezervisi", preuzimaju se podaci o destinaciji i broju karata i vrši se rezervacija na atributu **stanica**. Ukoliko je rezervacija uspešno obavljena, ispisati u novom prozoru poruku "Rezervacija uspesno obavljena". U suprotnom, ispisati poruku "Rezervacija nije uspela".
 
 ![Alt text](../images/prozor.jpg?raw=true "Title")
+
+# Zadatak 2 (ispravka koda)
+
+** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+
+U produžetku teksta je dat kod klase sa metodom koja kao parametar dobija listu sa tačno četiri String vrednosti i na ekranu ispisuje ove String-ove ali kao stranice paralelograma: gornju i donju stranicu čine horizontalno ispisani prvi i četvrti String iz liste, a levu i desnu stranicu čine dijagonalno ispisani drugi i treći String iz liste. Kao temena ispisati znak zvezda ('*'). Smatrati da nijedan String iz liste nije null i da su svi iste dužine. Na primer, ako metoda kao ulaz dobije listu sa četiri String vrednosti [“BELO“, “CRNO“, “ZUTO“, “SIVO“], konačan izlaz na ekranu treba da izgleda ovako:
+
+	*BELO*
+	 C    Z
+	  R    U
+	   N    T
+	    O    O
+	     *SIVO*
+
+Dati kod se kompajlira, ali ne radi to šta treba. Napraviti klasu **StringIspisivac4** u paketu **ispravka_koda**, prekucati u nju kod koji je dat  i uz minimalne izmene ga ispraviti tako da funkcioniše kako treba. Napraviti test klasu i, koristeći njenu **main** metodu, pozvati metodu **ispisiParalelogram()** i proveriti njen rad.
+
+	import java.util.List;
+	
+	public class StringIspisivac4 {
+		public static void ispisiParalelogram(List<String> lista) {
+			System.out.println("*" + lista + "*");
+			String s = " ";
+			for (int i = 0; i < lista.get(0).length(); i++) {
+				System.out.print(s + lista.get(i).charAt(1));
+				for (int j = 0; j < lista.get(0).length(); j++)
+					System.out.print(" ");
+				System.out.println(lista.get(i).charAt(1));
+				s = s + " ";
+			}
+			System.out.println(s + "*" + lista.get(3) + "*");
+		}
+	}
