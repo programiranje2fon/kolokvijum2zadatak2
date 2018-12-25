@@ -21,8 +21,8 @@ Napraviti javnu klasu **AutobuskaStanica** u paketu **autobuska_stanica** koja i
 Napraviti vizuelnu klasu **AutobuskaStanicaGUI** u paketu **autobuska_stanica.gui** koja izgleda kao na slici. Naslov prozora bi trebalo da bude "Autobuska stanica". Podesiti grafički interfejs tako da se u toku rada aplikacije ne mogu menjati dimenzije forme.
 - Klasa AutobuskaStanicaGUI bi trebalo da sadrži privatni atribut **stanica** koji predstavlja objekat klase AutobuskaStanica. Odmah inicijalizovati objekat.
 - Kada se pritisne dugme "Obrisi", briše se sadržaj svih elemenata u delu forme UNOS.
-- Kada se pritisne dugme "Dodaj", preuzimaju se svi podaci o polasku iz polja za unos u delu forme UNOS, kreira se objekat klase **Polazak** i dodaje u stanicu (atribut **stanica**). Ukoliko se desi greška prilikom isčitavanja podataka sa forme ili prilikom dodavanja polaska u stanicu, ispisati odgovarajuću poruku u novom prozoru. U slučaju da je unos uspešan, ispisati u novom prozoru poruku "Polazak je uspesno dodat".
-- Kada se pritisne dugme "Rezervisi", preuzimaju se podaci o destinaciji i broju karata i vrši se rezervacija na atributu **stanica**. Ukoliko je rezervacija uspešno obavljena, ispisati u novom prozoru poruku "Rezervacija uspesno obavljena". U suprotnom, ispisati poruku "Rezervacija nije uspela".
+- Kada se pritisne dugme "Dodaj", preuzimaju se svi podaci o polasku iz polja za unos u delu forme UNOS, kreira se objekat klase **Polazak** i dodaje u stanicu (atribut **stanica**). Ukoliko se desi greška prilikom isčitavanja podataka sa forme ili prilikom dodavanja polaska u stanicu, ispisati odgovarajuću poruku u JOptionPane dijalogu. U slučaju da je unos uspešan, ispisati u JOptionPane dijalogu poruku "Polazak je uspesno dodat".
+- Kada se pritisne dugme "Rezervisi", preuzimaju se podaci o destinaciji i broju karata i vrši se rezervacija na atributu **stanica**. Ukoliko je rezervacija uspešno obavljena, ispisati u JOptionPane dijalogu poruku "Rezervacija uspesno obavljena". U suprotnom, ispisati u JOptionPane dijalogu poruku "Rezervacija nije uspela".
 
 ![Alt text](../images/prozor.jpg?raw=true "Title")
 
