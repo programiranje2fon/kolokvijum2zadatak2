@@ -7,7 +7,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.lang.reflect.Modifier;
 import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 import org.junit.After;
 import org.junit.Before;
@@ -85,14 +85,12 @@ public class PolazakTest {
 	
 	@Test
 	public void metoda_setVreme() {
-		GregorianCalendar ocekivanoVreme = new GregorianCalendar();
-		ocekivanoVreme.set(GregorianCalendar.DAY_OF_MONTH, ocekivanoVreme.get(GregorianCalendar.DAY_OF_MONTH) + 3);
-		
+        LocalDate ocekivanoVreme = LocalDate.now().plusDays(3);
+
 		instance.setVreme(ocekivanoVreme);
-		GregorianCalendar vreme = (GregorianCalendar) TestUtil.getFieldValue(instance, "vreme");
+        LocalDate vreme = (LocalDate) TestUtil.getFieldValue(instance, "vreme");
 		
-		SimpleDateFormat formater = new SimpleDateFormat("dd.MM.yyyy. HH:mm:ss.SSS");
-		assertEquals("Nakon poziva metode setVreme(GregorianCalendar) sa prosledjenim datumom \""+formater.format(ocekivanoVreme.getTime())+"\", vrednost atributa vreme se nije promenila na tu vrednost", ocekivanoVreme, vreme);
+		assertEquals("Nakon poziva metode setVreme(LocalDate) sa prosledjenim datumom \""+ocekivanoVreme+"\", vrednost atributa vreme se nije promenila na tu vrednost", ocekivanoVreme, vreme);
 	}
 	
 	@Test(expected = RuntimeException.class)
@@ -101,15 +99,14 @@ public class PolazakTest {
 	}
 	
 	@Test(expected = RuntimeException.class)
-	public void metoda_setVreme_prazanString() {
-		GregorianCalendar vreme = new GregorianCalendar();
-		vreme.set(GregorianCalendar.DAY_OF_MONTH, vreme.get(GregorianCalendar.DAY_OF_MONTH) - 1);
+	public void metoda_setVreme_proslost() {
+        LocalDate vreme = LocalDate.now().minusDays(1);
 		instance.setVreme(vreme);
 	}
 	
 	@Test
 	public void metoda_getVreme() {
-		GregorianCalendar vreme = (GregorianCalendar) TestUtil.getFieldValue(instance, "vreme");
+        LocalDate vreme = (LocalDate) TestUtil.getFieldValue(instance, "vreme");
 		
 		assertEquals("Metoda getVreme() ne vraca vrednost atributa vreme", vreme, instance.getVreme());
 	}
@@ -140,8 +137,7 @@ public class PolazakTest {
 	
 	@Test
 	public void metoda_equals_isti() {
-		GregorianCalendar vreme = new GregorianCalendar();
-		vreme.set(GregorianCalendar.DAY_OF_MONTH, vreme.get(GregorianCalendar.DAY_OF_MONTH) + 1);
+        LocalDate vreme = LocalDate.now().plusDays(1);
 
 		instance.setDestinacija("Pirot");
 		instance.setVreme(vreme);
@@ -157,10 +153,9 @@ public class PolazakTest {
 	
 	@Test
 	public void metoda_equals_razlicitaDestinacija() {
-		GregorianCalendar vreme = new GregorianCalendar();
-		vreme.set(GregorianCalendar.DAY_OF_MONTH, vreme.get(GregorianCalendar.DAY_OF_MONTH) + 1);
+        LocalDate vreme = LocalDate.now().plusDays(1);
 
-		instance.setDestinacija("Pirot");
+        instance.setDestinacija("Pirot");
 		instance.setVreme(vreme);
 		instance.setBrojSlobodnihMesta(10);
 		
@@ -175,17 +170,15 @@ public class PolazakTest {
 	
 	@Test
 	public void metoda_equals_razlicitoVreme() {
-		GregorianCalendar vreme1 = new GregorianCalendar();
-		vreme1.set(GregorianCalendar.DAY_OF_MONTH, vreme1.get(GregorianCalendar.DAY_OF_MONTH) + 1);
+        LocalDate vreme1 = LocalDate.now().plusDays(1);
 
-		instance.setDestinacija("Pirot");
+        instance.setDestinacija("Pirot");
 		instance.setVreme(vreme1);
 		instance.setBrojSlobodnihMesta(10);
-		
-		GregorianCalendar vreme2 = new GregorianCalendar();
-		vreme2.set(GregorianCalendar.DAY_OF_MONTH, vreme2.get(GregorianCalendar.DAY_OF_MONTH) + 2);
-		
-		Polazak p1 = new Polazak();
+
+        LocalDate vreme2 = LocalDate.now().plusDays(2);
+
+        Polazak p1 = new Polazak();
 		p1.setDestinacija("Pirot");
 		p1.setVreme(vreme2);
 		p1.setBrojSlobodnihMesta(10);

@@ -39,12 +39,12 @@ public class StringIspisivac4Test {
 		lista.add("SIVO");
 
 		String ocekivaniIspis = 
-				"*BELO*\n" +
-				" C    Z\n" +
-				"  R    U\n" +
-				"   N    T\n" +
-				"    O    O\n" +
-				"     *SIVO*\n";
+				"*BELO*" + System.lineSeparator() +
+				" C    Z" + System.lineSeparator() +
+				"  R    U" + System.lineSeparator() +
+				"   N    T" + System.lineSeparator() +
+				"    O    O" + System.lineSeparator() +
+				"     *SIVO*"+ System.lineSeparator();
 		
 		StringIspisivac4.ispisiParalelogram(lista);
 		

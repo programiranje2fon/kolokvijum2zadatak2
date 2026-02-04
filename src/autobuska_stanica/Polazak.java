@@ -1,11 +1,11 @@
 package autobuska_stanica;
 
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 public class Polazak {
 
 	private String destinacija;
-	private GregorianCalendar vreme;
+	private LocalDate vreme;
 	private int brojSlobodnihMesta;
 
 	public String getDestinacija() {
@@ -20,12 +20,12 @@ public class Polazak {
 		}
 	}
 
-	public GregorianCalendar getVreme() {
+	public LocalDate getVreme() {
 		return vreme;
 	}
 
-	public void setVreme(GregorianCalendar vreme) {
-		if ((vreme == null) || vreme.before(new GregorianCalendar())) {
+	public void setVreme(LocalDate vreme) {
+		if ((vreme == null) || vreme.isBefore(LocalDate.now())) {
 			throw new RuntimeException("Greska: Vreme ne sme biti null ili trenutak u proslosti!");
 		} else {
 			this.vreme = vreme;
