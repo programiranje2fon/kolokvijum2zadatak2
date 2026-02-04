@@ -1,10 +1,10 @@
 # Zadatak 1
 
-** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+**NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
 
 Napraviti javnu klasu **Polazak** u paketu **autobuska_stanica** koja ima:
 - Privatni atribut **destinacija** (npr. “Novi Sad”).
-- Privatni atribut **vreme** koji predstavlja datum polaska (GregorianCalendar).
+- Privatni atribut **vreme** koji predstavlja datum polaska (bez vremena polaska, klasa LocalDate).
 - Privatni atribut **brojSlobodnihMesta** koji predstavlja broj slobodnih mesta za taj polazak.
 - Odgovarajuće **javne get i set metode** za ove atribute. Atribut destinacija ne sme biti null, niti prazan String. Atribut vreme ne sme biti NULL i mora se odnositi na neki trenutak u buducnosti. U slučaju unosa ovih nedozvoljenih vrednosti, baciti neproveravani izuzetak sa odgovarajućom porukom.
 - Redefinisanu **equals** metodu klase Object. Metoda prvo proverava da li je uneti objekat klase **Polazak**, pa ako nije, vraća FALSE. Metoda vraća TRUE ako su destinacija i vreme jednaki destinaciji i vremenu unetog polaska, a inače FALSE.
@@ -24,11 +24,11 @@ Napraviti vizuelnu klasu **AutobuskaStanicaGUI** u paketu **autobuska_stanica.gu
 - Kada se pritisne dugme "Dodaj", preuzimaju se svi podaci o polasku iz polja za unos u delu forme UNOS, kreira se objekat klase **Polazak** i dodaje u stanicu (atribut **stanica**). Ukoliko se desi greška prilikom isčitavanja podataka sa forme ili prilikom dodavanja polaska u stanicu, ispisati odgovarajuću poruku u JOptionPane dijalogu. U slučaju da je unos uspešan, ispisati u JOptionPane dijalogu poruku "Polazak je uspesno dodat".
 - Kada se pritisne dugme "Rezervisi", preuzimaju se podaci o destinaciji i broju karata i vrši se rezervacija na atributu **stanica**. Ukoliko je rezervacija uspešno obavljena, ispisati u JOptionPane dijalogu poruku "Rezervacija uspesno obavljena". U suprotnom, ispisati u JOptionPane dijalogu poruku "Rezervacija nije uspela".
 
-![Alt text](../images/prozor.jpg?raw=true "Title")
+![Slika 1](../images/prozor.jpg)
 
 # Zadatak 2 (ispravka koda)
 
-** NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
+**NAPOMENA: PO ZAVRŠETKU ZADATKA OBAVEZNO TESTIRATI REŠENJE POZIVANJEM AUTOMATIZOVANIH TESTOVA (desnim tasterom na naziv projekta, Run as - Java Application - PokreniTestove)**
 
 U produžetku teksta je dat kod klase sa metodom koja kao parametar dobija listu sa tačno četiri String vrednosti i na ekranu ispisuje ove String-ove ali kao stranice paralelograma: gornju i donju stranicu čine horizontalno ispisani prvi i četvrti String iz liste, a levu i desnu stranicu čine dijagonalno ispisani drugi i treći String iz liste. Kao temena ispisati znak zvezda ('*'). Smatrati da nijedan String iz liste nije null i da su svi iste dužine. Na primer, ako metoda kao ulaz dobije listu sa četiri String vrednosti [“BELO“, “CRNO“, “ZUTO“, “SIVO“], konačan izlaz na ekranu treba da izgleda ovako:
 
